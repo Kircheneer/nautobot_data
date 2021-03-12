@@ -1,11 +1,11 @@
 from django.utils.text import slugify
 
 from nautobot.dcim.choices import DeviceStatusChoices, SiteStatusChoices
-from nautobot.dcim.models import Device, DeviceRole, DeviceType, Manufacturer
+from nautobot.dcim.models import Device, DeviceRole, DeviceType, Manufacturer, Site
 from nautobot.extras.jobs import *
 
 
-class NewBranch(Job):
+class NewBranch():
 
     class Meta:
         name = "New Branch"
