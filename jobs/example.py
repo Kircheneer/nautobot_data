@@ -1,7 +1,7 @@
 from django.utils.text import slugify
 
 from nautobot.dcim.choices import DeviceStatusChoices, SiteStatusChoices
-from nautobot.dcim.models import Device, DeviceRole, DeviceType, Manufacturer, Site
+from nautobot.dcim.models import Device, DeviceRole, DeviceType, Manufacturer
 from nautobot.extras.jobs import *
 
 
