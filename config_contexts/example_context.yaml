@@ -1,1 +1,4 @@
-test: "data"
+---
+- _metadata:
+    name: "Test data"
+  test_data: "testing123"
