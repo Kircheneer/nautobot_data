@@ -21,4 +21,4 @@ class NewTenant(Job):
             tenant.validated_save()
         self.log_success(f"Successfully created tenant {tenant}.")
 
-        return tenant
+        return str(tenant)
