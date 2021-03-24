@@ -5,7 +5,7 @@ from nautobot.dcim.models import Device, DeviceRole, DeviceType, Manufacturer, S
 from nautobot.extras.jobs import *
 
 
-class NewBranch():
+class NewBranch(Job):
 
     class Meta:
         name = "New Branch"
