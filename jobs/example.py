@@ -36,8 +36,7 @@ class NewBranch(Job):
         # Create the new site
         site = Site(
             name=data['site_name'],
-            slug=slugify(data['site_name']),
-            status=SiteStatusChoices.STATUS_PLANNED
+            slug=slugify(data['site_name'])
         )
         site.validated_save()
         self.log_success(obj=site, message="Created new site")
