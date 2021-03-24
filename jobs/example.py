@@ -37,7 +37,7 @@ class NewBranch(Job):
         for i in range(1, data['switch_count'] + 1):
             switch = Device(
                 device_type=data['switch_model'],
-                name=f'{site.slug}-switch{i}',
+                name=f'{switch{i}',
                 status=DeviceStatusChoices.STATUS_PLANNED,
                 device_role=switch_role
             )
