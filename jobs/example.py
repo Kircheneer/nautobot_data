@@ -32,12 +32,23 @@ class NewBranch(Job):
     )
 
     def run(self, data, commit):
+
+        # Create the new site
+        site = Site(
+            name=data['site_name'],
+            slug=slugify(data['site_name']),
+            status=SiteStatusChoices.STATUS_PLANNED
+        )
+        site.validated_save()
+        self.log_success(obj=site, message="Created new site")
+
         # Create access switches
         switch_role = DeviceRole.objects.get(name='Access Switch')
         for i in range(1, data['switch_count'] + 1):
             switch = Device(
                 device_type=data['switch_model'],
-                name=f'{switch{i}',
+                name=f'{site.slug}-switch{i}',
+                site=site,
                 status=DeviceStatusChoices.STATUS_PLANNED,
                 device_role=switch_role
             )
